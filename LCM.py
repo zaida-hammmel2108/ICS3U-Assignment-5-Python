@@ -1,38 +1,39 @@
 #!/usr/bin/env python3
 
 # Created by: Zaida Hammel
-# Created on: Nov 2022
-# This program determines the lowest common multiple
+# Created on: Dec 2022
+# This program calculates the LCM of two integers
 
-# code inspired by https://www.javatpoint.com/python-find-lcm
-def main(num1, num2):
-    # selecting the greater number
-    if num1 > num2:
-        greater = num1
-
-    else:
-        greater = num2
-    while True:
-        if greater % num1 == 0 and greater % num2 == 0:
-            lcm = greater
-            break
-        greater += 1
-    return lcm
+import math
 
 
-# getting input
-user_num1 = int(input("Enter your first integer: "))
-user_num2 = int(input("Enter your second integer: "))
-# printing the result
-print(
-    "The lowest common multiple of",
-    user_num1,
-    "and",
-    user_num2,
-    "is",
-    main(user_num1, user_num2),
-)
+def main():
+
+    # input
+
+    integer1 = input("Enter your first number: ")
+    integer2 = input("\nEnter your second number: ")
+
+    # process & output
+
+    try:
+        integer1_int = int(integer1)
+        integer2_int = int(integer2)
+
+        if integer1_int > integer2_int:
+            greater = integer1_int
+        else:
+            greater = integer2_int
+        while True:
+            if (greater % integer1_int == 0) and (greater % integer2_int == 0):
+                lcm = greater
+                break
+            greater += 1
+        print("\nThe L.C.M. of", integer1, "and", integer2, "is", lcm)
+
+    except Exception:
+        print("\nInvalid Integer.")
 
 
 if __name__ == "__main__":
-    main(user_num1, user_num2)
+    main()
